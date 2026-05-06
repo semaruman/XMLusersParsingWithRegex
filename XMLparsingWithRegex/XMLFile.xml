@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<body>
+	<userInfo>
+		<userFIO>Иванов И. И.</userFIO>
+		<userBirthDate>12.05.1990</userBirthDate>
+		<userNumber>+79001234567</userNumber>
+		<userRating>На основе отзывов клиентов данный пользователь получил 4 из 5 баллов.</userRating>
+	</userInfo>
+	<userInfo>
+		<userFIO>Петров Александр Сергеевич</userFIO>
+		<userBirthDate>01 Января 1985 года</userBirthDate>
+		<userNumber>89119876543</userNumber>
+		<userRating>Средний показатель по системе составил 5 из 5 баллов.</userRating>
+	</userInfo>
+	<userInfo>
+		<userFIO>Сидоров С.П.</userFIO>
+		<userBirthDate></userBirthDate>
+		<userNumber>+79220001122</userNumber>
+		<userRating>После долгой модерации выставлено 3 из 5 баллов.</userRating>
+	</userInfo>
+	<userInfo>
+		<userFIO>кузнецов андрей викторович</userFIO>
+		<userBirthDate>24.12.2000</userBirthDate>
+		<userNumber>билет №123456789</userNumber>
+		<userRating>Уровень доверия: 2 из 5 баллов.</userRating>
+	</userInfo>
+	<userInfo>
+		<userFIO>Васильев В. В.</userFIO>
+		<userBirthDate>15 Марта 1995 года</userBirthDate>
+		<userNumber></userNumber>
+		<userRating>Общий зачет: 5 из 5 баллов.</userRating>
+	</userInfo>
+	<userInfo>
+		<userFIO>Смирнова Анна Игоревна</userFIO>
+		<userBirthDate>30.11.1988</userBirthDate>
+		<userNumber>89551112233</userNumber>
+		<userRating>Внутренний скоринг зафиксировал 1 из 5 баллов.</userRating>
+	</userInfo>
+	<userInfo>
+		<userFIO>Павлов П. П.</userFIO>
+		<userBirthDate></userBirthDate>
+		<userNumber>+79664445566</userNumber>
+		<userRating>По результатам тестов 4 из 5 баллов.</userRating>
+	</userInfo>
+	<userInfo>
+		<userFIO>Михайлов Михаил Михайлович</userFIO>
+		<userBirthDate>10 февраля 1992 года</userBirthDate>
+		<userNumber>КПСС-1975-№001</userNumber>
+		<userRating>Рейтинг надежности: 3 из 5 баллов.</userRating>
+	</userInfo>
+	<userInfo>
+		<userFIO>Лебедев Л.Л.</userFIO>
+		<userBirthDate>05.05.2005</userBirthDate>
+		<userNumber>89990000000</userNumber>
+		<userRating>Пользователь заработал 5 из 5 баллов.</userRating>
+	</userInfo>
+	<userInfo>
+		<userFIO>Новиков Игорь</userFIO>
+		<!-- Ошибка в формате FIO -->
+		<userBirthDate>20 Октября 1980 года</userBirthDate>
+		<userNumber>+79005556677</userNumber>
+		<userRating>Автоматическая оценка 2 из 5 баллов.</userRating>
+	</userInfo>
+	<userInfo>
+		<userFIO>Морозов М. М.</userFIO>
+		<userBirthDate>01.01.1970</userBirthDate>
+		<userNumber>Н/Д</userNumber>
+		<userRating>Текущий статус 4 из 5 баллов.</userRating>
+	</userInfo>
+	<userInfo>
+		<userFIO>Попова Е. А.</userFIO>
+		<userBirthDate>17 Июля 1999 года</userBirthDate>
+		<userNumber>89001112233</userNumber>
+		<userRating>Итоговый вердикт: 5 из 5 баллов.</userRating>
+	</userInfo>
+</body>
