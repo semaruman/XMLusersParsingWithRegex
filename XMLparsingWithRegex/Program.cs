@@ -78,7 +78,7 @@ public class Program
                 //Console.WriteLine("\tНеверная дата");
                 return "NULL";
             }
-            Console.WriteLine($"\tДата: {str1.Groups[0].Value}");
+            //Console.WriteLine($"\tДата: {str1.Groups[0].Value}");
             return str1.Groups[0].Value;
         }
 
@@ -116,7 +116,17 @@ public class Program
 
     static string GetUserNumber(string xmlNumber)
     {
-        return "";
+        //Console.WriteLine($"XML номер: {xmlNumber}");
+        string pattern = @"^(8|\+7)\d{10}";
+        if (Regex.IsMatch(xmlNumber, pattern))
+        {
+            string number = Regex.Match(xmlNumber, pattern).Value;
+            string res = $"+7{string.Join("", number.TakeLast(10))}";
+            //Console.WriteLine($"\tПолученный номер: {res}");
+            return res;
+        }
+        //Console.WriteLine("\tНеверный номер");
+        return "NULL";
     }
 
     static int GetUserRating(string xmlRating)
