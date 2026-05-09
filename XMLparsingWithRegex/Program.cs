@@ -4,6 +4,7 @@ using System.Xml.Linq;
 using System.Text.RegularExpressions;
 using XMLparsingWithRegex.Models;
 using System.Resources;
+using ClosedXML.Excel;
 
 public class Program
 {
@@ -14,7 +15,7 @@ public class Program
 
         XDocument xmlDocument = XDocument.Load(xmlPath);
         Console.WriteLine("XML файл загружен!");
-        
+
         //получение моделей пользователей из XML документа
         var users = xmlDocument.Root.Elements()
             .Select(element =>
@@ -34,11 +35,45 @@ public class Program
                     UserNumber = number,
                     UserRating = rating
                 };
-            });
+            }).ToList();
         Console.WriteLine($"Загружено пользователей: {users.Count()}");
+
+        //заполнение excel файла
+        using (var workbook = new XLWorkbook())
+        {
+            var worksheet = workbook.Worksheets.Add("Данные пользователей");
+
+            //заголовки
+            worksheet.Cell(1, 1).Value = "ФИО";
+            worksheet.Cell(1, 2).Value = "Дата рождения";
+            worksheet.Cell(1, 3).Value = "Номер";
+            worksheet.Cell(1, 4).Value = "Рейтинг";
+
+            //стиль заголовков
+            var headerRow = worksheet.Row(1);
+            headerRow.Style.Font.Bold = true;
+            headerRow.Style.Fill.BackgroundColor = XLColor.PastelGreen;
+
+            //заполнение данными
+            for (int i = 0; i < users.Count; i++)
+            {
+                int rowIdx = i + 2; // Строка 1 занята шапкой, в Excel индексация с 1
+
+                worksheet.Cell(rowIdx, 1).Value = users[i].UserFIO;
+                worksheet.Cell(rowIdx, 2).Value = users[i].UserBirthDate;
+                worksheet.Cell(rowIdx, 3).Value = users[i].UserNumber;
+                worksheet.Cell(rowIdx, 4).Value = users[i].UserRating;
+            }
+
+            //настройка ширины столбцов
+            worksheet.Columns().AdjustToContents();
+
+            workbook.SaveAs(excelPath);
+
+        }
     }
 
-    
+
 
     static public string GetFio(string xmlFio)
     {
@@ -46,7 +81,7 @@ public class Program
 
         string pattern = @"(?<Surname>\w+) (?<Name>\w+)[\. ]+(?<Ot>\w+\.?)";
         var str = Regex.Match(xmlFio, pattern);
-        
+
         if (str.Success)
         {
             string surname = str.Groups["Surname"].Value;
