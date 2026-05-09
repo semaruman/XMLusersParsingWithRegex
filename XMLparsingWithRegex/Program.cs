@@ -131,6 +131,15 @@ public class Program
 
     static int GetUserRating(string xmlRating)
     {
+        //Console.WriteLine($"XML рейтинг: {xmlRating}");
+        string pattern = @"\d";
+        if (Regex.IsMatch(xmlRating, pattern))
+        {
+            int rating = int.Parse(Regex.Match(xmlRating, pattern).Value);
+            //Console.WriteLine($"\tполученный рейтинг: {rating}");
+            return rating;
+        }
+        //Console.WriteLine("Рейтинг не определён");
         return 0;
     }
 }
